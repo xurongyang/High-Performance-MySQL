@@ -1,4 +1,4 @@
-#Chapter1 MySQL架构与历史
+#MySQL架构与历史
 ===
 ###MySQL逻辑架构
 MySQL的架构大致可以分为两部分，1.MySQL服务器，2.存储引擎部分。
