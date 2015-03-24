@@ -7,7 +7,7 @@
 
 ###整数类型
 
-+ 整数类型有tinyint，smallint，mediumint，int，mediumint，bigint分别占用1，2，3，4，8个字节的存储空间。
++ 整数类型有tinyint，smallint，mediumint，int，bigint分别占用1，2，3，4，8个字节的存储空间。
 + 可选择unsigned类型，不为负数，使得正数的上限可以提高一倍。
 + MySQL可以为整数类型指定宽度，比如int(11)但是这基本没意义。
 

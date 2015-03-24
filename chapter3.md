@@ -1,10 +1,10 @@
 #MySQL性能剖析
 ###MySQL性能优化的思路
-性能优化的目的：在一定负载下降低响应时间
++ 性能优化的目的：在一定负载下降低响应时间
 
-如何做性能优化？将大量精力用来测量响应时间花费在什么地方
++ 如何做性能优化？将大量精力用来测量响应时间花费在什么地方
 
-时间耗费分为两部分：1.执行时间，2.等待时间
++ 时间耗费分为两部分：1.执行时间，2.等待时间
 
 ###如何做性能优化
 ####获得查询分布
@@ -27,26 +27,26 @@
 有三种方式：1.MySQL慢查询日志，对性能影响非常小，可以采用，2.可以用pt-query-digest --processlist通过记录processlist的方式，3.pt-query-processlist --type=tcpdump通过分析网络协议捕获查询。
 
 ####分析MySQL慢查询
-可以用pt-query-digest来做分析，具体不多说
++ 可以用pt-query-digest来做分析，具体不多说
 
-对于MySQL 5.1版本之后的MySQL，可以通过show profile来记录每一条查询具体时间花费在什么地方，比如opening table，Table lock等。
++ 对于MySQL 5.1版本之后的MySQL，可以通过show profile来记录每一条查询具体时间花费在什么地方，比如opening table，Table lock等。
 
-show status命令可以看到MySQL内部处理该查询都做了些什么，诸如：create_tmp_disk_tables，handler commit等
++ show status命令可以看到MySQL内部处理该查询都做了些什么，诸如：create_tmp_disk_tables，handler commit等
 
 ###诊断间歇性问题
-单条查询的问题还是服务器问题？如果整体都慢，可能是服务器问题，如果只有某几条慢，那可能是查询的问题。
++ 单条查询的问题还是服务器问题？如果整体都慢，可能是服务器问题，如果只有某几条慢，那可能是查询的问题。
 
-用show global status查询某些变量的值，比如thread_running，thread_connected等。
++ 用show global status查询某些变量的值，比如thread_running，thread_connected等。
 
-用show processlist查看这些查询究竟在做什么，比如sending data，cleaning up等。
++ 用show processlist查看这些查询究竟在做什么，比如sending data，cleaning up等。
 
-分析查询日志。
++ 分析查询日志。
 
-通过设置触发器捕获诊断数据，可以利用pt-talk工具
++ 通过设置触发器捕获诊断数据，可以利用pt-talk工具
 
 ###其它一些工具
 
-USER_STATISTICS表
++ USER_STATISTICS表
 
-使用strace
++ 使用strace
 
